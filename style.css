@@ -66,3 +66,120 @@ blockquote {
 	- https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
 */
 
+
+/* Nastavení gridu */
+
+.blog {
+	display: grid;
+	grid-template-columns: [full-start] 1fr [center-start] 4fr [center-end] 2fr [full-end];
+	gap: 0 40px;
+}
+
+h1, h2, p, header, footer {
+	grid-column: center;
+}
+
+blockquote, figure {
+	grid-column: full;
+}
+
+.tip-vlevo {
+	grid-column: full-start / center-start;
+	align-self: center;
+}
+
+.tip-vpravo {
+	grid-column: center-end / full-end;
+	align-self: center;
+}
+
+
+/* Styly */
+
+img {
+	width: 100%;
+}
+
+p {
+	margin-top: 0;
+}
+
+h1, 
+h2 {
+	color: var(--limetka);
+}
+
+h1 {
+	font-size: 4rem;
+	margin-bottom: 4rem;
+}
+
+h2 {
+	font-size: 3rem;
+}
+
+header > p,
+figcaption,
+blockquote,
+footer * {
+	color: var(--seda);
+}
+
+h2,
+blockquote,
+figure {
+	margin: 2rem 0;
+}
+
+blockquote {
+	padding: 1.5rem 0;
+	position: relative;
+	font-size: 2rem;
+	text-align: center;
+}
+
+blockquote::before,
+blockquote::after {
+	position: absolute;
+	top: 0;
+	right: calc(50% - 50px);
+	content: "";
+	min-width: 80px;
+	width: 10vw;
+	border-top: 2px solid var(--limetka);
+}
+
+blockquote::after {
+	top: unset;
+	bottom: 0;
+}
+
+.tip {
+	padding: 20px;
+	background-color: var(--svetla);
+	color: var(--tmava);
+}
+
+.tip > p {
+	margin: 0;
+}
+
+.tip a {
+	color: var(--oranzova);
+}
+
+.tip-vlevo {
+	border-right: 2px solid var(--oranzova);
+}
+
+.tip-vpravo {
+	text-align: right;
+	border-left: 2px solid var(--oranzova);
+}
+
+footer {
+	margin-top: 2rem;
+}
+
+
+
