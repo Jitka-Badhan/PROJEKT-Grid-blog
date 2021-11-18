@@ -85,12 +85,12 @@ blockquote, figure {
 
 .tip-vlevo {
 	grid-column: full-start / center-start;
-	align-self: center;
+	align-self: start;
 }
 
 .tip-vpravo {
 	grid-column: center-end / full-end;
-	align-self: center;
+	align-self: start;
 }
 
 
@@ -140,12 +140,14 @@ blockquote {
 
 blockquote::before,
 blockquote::after {
+	--min-line-width: 80px;
+	--line-width: 10vw;
 	position: absolute;
 	top: 0;
-	right: calc(50% - 50px);
+	right: min(calc(50% - (var(--line-width) / 2)), calc(50% - (var(--min-line-width) / 2)));
 	content: "";
-	min-width: 80px;
-	width: 10vw;
+	min-width: var(--min-line-width);
+	width: var(--line-width);
 	border-top: 2px solid var(--limetka);
 }
 
